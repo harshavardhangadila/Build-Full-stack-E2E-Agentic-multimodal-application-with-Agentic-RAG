@@ -1,10 +1,8 @@
-# Personal Expense Assistant — Going Multimodal with Google ADK, Gemini 2.5, Firestore & Cloud Run
+## Personal Expense Assistant - Multimodal with Google ADK, Gemini 2.5, Firestore & Cloud Run
 
 Build a multimodal personal expense assistant that accepts chat + receipt images, extracts and stores receipt data, and lets you search and analyze expenses via natural language. The stack uses the **Agent Development Kit (ADK)** with **Gemini 2.5**, **Firestore (vector search)**, **Cloud Storage artifacts**, a **FastAPI** backend, and a **Gradio** chat frontend. Deploy the whole thing to **Cloud Run**.
 
-> Codelab author: *Alvin Prayuda Juniarta Dwiyantoro*  
-> Last updated: **Nov 17, 2025**
-
+Youtube: [Demo](https://www.youtube.com/playlist?list=PLps8its2VEvkKg03Fm1RMN974EZMPA8k0)
 ---
 
 ## ✨ Features
@@ -20,23 +18,8 @@ Build a multimodal personal expense assistant that accepts chat + receipt images
 
 ## 🧱 Architecture
 
-```
-[Browser/Gradio]  <--HTTP-->  [FastAPI Backend Runner]
-       |                           |
-   Uploads files               ADK Runner:
-       |                       - SessionService (InMemory)
-       |                       - ArtifactService (GCS)
-       |                       - Agent (Gemini 2.5 Flash)
-       |                           |
-       |                      Tools:
-       |                      - store_receipt_data()
-       |                      - get_receipt_data_by_image_id()
-       |                      - search_receipts_by_metadata_filter()
-       |                      - search_relevant_receipts_by_natural_language_query()
-       |                           |
-       |                      Firestore (metadata + vector)
-       |                      GCS (receipt images)
-```
+<img width="968" height="644" alt="image" src="https://github.com/user-attachments/assets/7ca86c36-277b-4aad-9ec9-0172b45c8557" />
+
 
 ---
 
@@ -102,7 +85,7 @@ DB_COLLECTION_NAME: "receipts"
 BACKEND_URL: "http://0.0.0.0:8081/chat"   # Frontend -> Backend URL
 ```
 
-> Locally, you can also export these as environment variables or have `settings.py` read a `.env`.
+> Locally, you can also export these as environment variables.
 
 ### Required Services
 
@@ -319,16 +302,6 @@ https://personal-expense-assistant-*******.us-central1.run.app
 - More robust duplicate detection & idempotency.
 - Add auth + rate limiting.
 - Batch embeddings + streaming responses.
-
----
-
-## 📜 License
-
-Choose a license (e.g., MIT). Example:
-
-```
-MIT License
-```
 
 ---
 
