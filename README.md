@@ -2,7 +2,6 @@
 
 Build a multimodal personal expense assistant that accepts chat + receipt images, extracts and stores receipt data, and lets you search and analyze expenses via natural language. The stack uses the **Agent Development Kit (ADK)** with **Gemini 2.5**, **Firestore (vector search)**, **Cloud Storage artifacts**, a **FastAPI** backend, and a **Gradio** chat frontend. Deploy the whole thing to **Cloud Run**.
 
-Youtube: [Demo](https://www.youtube.com/playlist?list=PLps8its2VEvkKg03Fm1RMN974EZMPA8k0)
 ---
 
 ## ✨ Features
